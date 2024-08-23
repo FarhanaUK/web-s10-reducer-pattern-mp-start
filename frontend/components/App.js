@@ -1,4 +1,4 @@
-import React from 'react' // 👈 you'll need the reducer hook
+import React, {useReducer} from 'react' // 👈 you'll need the reducer hook
 import Quotes from './Quotes'
 import QuoteForm from './QuoteForm'
 
@@ -34,6 +34,18 @@ const quotes = [
 
 // 👇 create your initial state object here
 
+const initialState = {
+  highlightedQuote: null,
+  displayAllQuotes: true,
+  quotes: [
+    {
+      id: 1,                     
+      authorName: "Dr. Seuss",   
+      quoteText: "Don't cry...",
+      apocryphal: false          
+    }
+  ],
+}
 const reducer = (state, action) => {
   // 👇 implement your reducer here using the action types above
 }
