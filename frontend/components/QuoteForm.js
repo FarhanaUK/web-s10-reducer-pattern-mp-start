@@ -37,7 +37,7 @@ const [state, dispatch] = useReducer(reducer, initialState)
     // 👇 implement
   }
   const onNewQuote = (evt) => {
-    evt.preventDefualt()
+    evt.preventDefault()
     const {authorName, quoteText} = state
     createQuote({authorName, quoteText})
     // 👇 implement
@@ -50,8 +50,8 @@ const [state, dispatch] = useReducer(reducer, initialState)
       <h3>New Quote Form</h3>
       <label><span>Author:</span>
         <input
-        value={state.authorName}
           type='text'
+          value={state.authorName}
           name='authorName'
           placeholder='type author name'
           onChange={onChange}
@@ -60,6 +60,7 @@ const [state, dispatch] = useReducer(reducer, initialState)
       <label><span>Quote text:</span>
         <textarea
           type='text'
+          value={state.quoteText}
           name='quoteText'
           placeholder='type quote'
           onChange={onChange}
